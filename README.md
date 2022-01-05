@@ -26,13 +26,12 @@ _ java
     Download from the internet "Terretoire resources" file and copy it to project root folder
     In root folder of project example : cd ~[path_to]/SemanticWeb/project/
     ```
-        mvn spring-boot:run
+        $>mvn spring-boot:run
     ```
 
 ## Run Project Using Java (if you have also mvn)
 
-    ```
-        $> cd ~[path_to]/SemanticWeb/project/
+    ```$> cd ~[path_to]/SemanticWeb/project/
         $> mvn install
         $> java -jar target/project-0.0.1-SNAPSHOT.jar
     ```
