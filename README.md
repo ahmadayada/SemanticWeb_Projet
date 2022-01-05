@@ -15,15 +15,15 @@ The Semantic Web project is a large and long practical exercise that consists in
 
 ## pre-install
 
-install maven in your computer machine or java
-_ maven<br/>
-or
-_ java
+```
+    * Download from the internet "Terretoire resources" file and copy it to project root folder.
+    * install maven (Apache-Maven-3.8.3) to your computer machine and Java version: 11.0.13 (jdk-11.0.13).
+```
 
 ## Run Project Using the Maven plugin
 
     In root folder of project example : cd ~[path_to]/SemanticWeb/project/
-    Download from the internet "Terretoire resources" file and copy it to project root folder
+
     In root folder of project example : cd ~[path_to]/SemanticWeb/project/
     ```
         $>mvn spring-boot:run
