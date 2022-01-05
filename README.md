@@ -23,8 +23,6 @@ The Semantic Web project is a large and long practical exercise that consists in
 ## Run Project Using the Maven plugin
 
     In root folder of project example : cd ~[path_to]/SemanticWeb/project/
-
-    In root folder of project example : cd ~[path_to]/SemanticWeb/project/
     ```
         $>mvn spring-boot:run
     ```
