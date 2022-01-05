@@ -29,7 +29,8 @@ The Semantic Web project is a large and long practical exercise that consists in
 
 ## Run Project Using Java (if you have also mvn)
 
-    ```$> cd ~[path_to]/SemanticWeb/project/
+    ```
+        $> cd ~[path_to]/SemanticWeb/project/
         $> mvn install
         $> java -jar target/project-0.0.1-SNAPSHOT.jar
     ```
