@@ -12,7 +12,7 @@ buildNumber.properties
 .mvn/timing.properties
 Plateforme_Territoire/
 project-docs/
-*.ttl
+
 #
 # IntelliJ
 #
