@@ -82,7 +82,7 @@ public class Sensor {
                             root);
                     // property observed
                     observation.addProperty(model.createProperty(sosa + "observedProperty"),
-                            model.createResource(emseUri + "emse/fayol/"
+                            model.createResource(emseUri + ""
                                     + location + "#temperature"));
                     // time "2017-06-06T12:36:12Z"^^xsd:dateTime
                     // Date observation
