@@ -8,7 +8,6 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.jena.base.Sys;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.rdf.model.Property;
@@ -22,6 +21,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import fr.emse.master.project.Meteo.Meteo;
+import fr.emse.master.project.Sensors.Sensor;
 
 @SpringBootApplication
 public class ProjectApplication {
@@ -58,9 +58,9 @@ public class ProjectApplication {
 			System.err.println("ERREUR IN LOADING PLATFORME TERRETOIRE Folder(s)");
 		}
 		System.err.println("Loading " + filesList.size() + "files to List is Successed !!");
-		// System.out.println("\n" + filesList.get(0).getAbsolutePath() + "\n");
 		Model model = ModelFactory.createDefaultModel();
-		// model.read(filesList.get(0).getAbsolutePath());
+		Sensor sensorObs = new Sensor();
+		sensorObs.create_ttl_from_sensorObs();
 
 		for (File file : filesList) {
 			// System.out.println("file " + file);
@@ -100,7 +100,7 @@ public class ProjectApplication {
 		 * __________________________________________________________________________________________
 		 */
 		try {
-			OutputStream out = new FileOutputStream("allPlateformeTerritoire.ttl");
+			OutputStream out = new FileOutputStream("./outPutTTL/allPlateformeTerritoire.ttl");
 
 			// Converts the string into bytes
 
@@ -123,7 +123,6 @@ public class ProjectApplication {
 			conneg.load(model); // add the content of model to the triplestore
 			conneg.update("INSERT DATA { <test> a <TestClass> }"); // add the triple to the triplestore
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			System.err.println("cannot connect to " + datasetURL);
 			System.err.println("please verify your Apache Jena Fuskie Server is Started");
 			System.err.println();

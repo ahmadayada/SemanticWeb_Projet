@@ -12,13 +12,10 @@ import java.util.TimeZone;
 import org.apache.jena.datatypes.xsd.XSDDatatype.XSDGenericType;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
-import org.apache.jena.rdf.model.Property;
 import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.rdfconnection.RDFConnection;
 import org.apache.jena.rdfconnection.RDFConnectionFactory;
-import org.apache.jena.riot.RDFDataMgr;
 import org.apache.jena.vocabulary.RDF;
-import org.apache.jena.vocabulary.RDFS;
 
 public class Sensor {
 
@@ -31,26 +28,28 @@ public class Sensor {
     String emseUri = "https://territoire.emse.fr/kg/";
     String ontol = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#";
 
-    public void create(Model model) {
+    public void create_ttl_from_sensorObs() {
+        Model model = ModelFactory.createDefaultModel();
         model.setNsPrefix("sosa", sosa);
-        model.setNsPrefix("salle", emseUri + "/emse/fayol/");
+        model.setNsPrefix("salle", emseUri + "emse/fayol/");
         model.setNsPrefix("obs", emseUri + "emse/fayol/observation/");
         model.setNsPrefix("dul", ontol);
         model.setNsPrefix("schema", "http://schema.org/");
         int obsNumber = 0;
+        int count = 0; // count <100000 lines parsing from csv file
+        /**  */
         /* e4=ET4 et S431H=451H il faut modifier ça à la lecture */
         try (BufferedReader r = new BufferedReader(new FileReader(inputFileName))) {
             String line = r.readLine();
-            int count = 0;
 
-            while ((line = r.readLine()) != null) {
-                if (line.isEmpty() || count == 0) {
+            line = r.readLine();
+            while ((line = r.readLine()) != null && count <= 100000) {
+                if (line.isEmpty()) {
                     continue;
                 }
                 count++;
 
                 String[] splitLine = line.split(",");
-                String stopId = splitLine[0].replace(" ", "_");
                 name = splitLine[0];
                 time = splitLine[1];
                 HMDT = splitLine[2];
@@ -68,7 +67,7 @@ public class Sensor {
                 if (!location.isEmpty()) {
                     // define sensor location
                     root.addProperty(model.createProperty(ontol + "hasLocation"), model.createResource(
-                            emseUri + "emse/fayol/" + location));
+                            emseUri + "" + location));
                 }
                 if (!TEMP.isEmpty()) {
                     count += 1;
@@ -105,24 +104,33 @@ public class Sensor {
             }
 
         } catch (Exception e) {
-            System.err.println(" !! ERROR : " + e.toString());
+            System.err.println(" !! ERROR : flie Sensor.java " + e.toString());
+        }
+        exportSensor(model);
+        String datasetURL = "http://localhost:3030/ProjetDataSet";
+        String sparqlEndpoint = datasetURL + "/sparql";
+        String sparqlUpdate = datasetURL + "/update";
+        String graphStore = datasetURL + "/data";
+        try {
+            RDFConnection conneg = RDFConnectionFactory.connect(sparqlEndpoint, sparqlUpdate, graphStore);
+            conneg.load(model); // add the content of model to the triplestore
+            conneg.update("INSERT DATA { <test> a <TestClass> }"); // add the triple to the triplestore
+        } catch (Exception e) {
+            System.err.println("cannot connect to " + datasetURL);
+            System.err.println("please verify your Apache Jena Fuskie Server is Started");
+            System.err.println();
         }
 
     }
 
     public void exportSensor(Model model) {
         try {
-            OutputStream out = new FileOutputStream("sensor.ttl");
-
-            // Converts the string into bytes
-
-            // Writes data to the output stream
-            // out.write(dataBytes);
+            OutputStream out = new FileOutputStream("./outPutTTL/sensorObservation.ttl");
             model.write(out, "TTL");
-            // Closes the output stream
             out.close();
 
         } catch (Exception e) {
+            System.err.println("ERREUR EXPORT SensorObs.ttl");
             e.getStackTrace();
         }
     }

@@ -4,9 +4,6 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.TimeZone;
 
-import org.apache.jena.sparql.function.library.date;
-import org.springframework.data.auditing.CurrentDateTimeProvider;
-
 public class Meteo {
     public static final int METEO_CODE_SAINT_ETIENNE = 7475;
     public int code; // equal to code2 of mean the city code
