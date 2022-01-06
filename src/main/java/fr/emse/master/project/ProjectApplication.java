@@ -10,29 +10,24 @@ import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.rdfconnection.RDFConnection;
 import org.apache.jena.rdfconnection.RDFConnectionFactory;
-import org.apache.jena.riot.RDFDataMgr;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import fr.emse.master.project.Meteo.Meteo;
+
 @SpringBootApplication
 public class ProjectApplication {
-
+	// Here Just a Method to get all .ttl file from path_Directory and their
+	// sub_Directory in recursive
 	public static void listFiles(String path, List<File> filesList) throws InvocationTargetException {
-		// List<String> filesList = new ArrayList<>();
-
-		// path = "./Plateforme_Territoire/kg/";
 		File folder = new File(path);
 		File[] listOfFiles = folder.listFiles();
 		for (File file : listOfFiles) {
-			// Reading RDF or TTL
 			if (file.isFile() && file.getName().endsWith(".ttl")) {
 				filesList.add(file);
-				System.err.println(">" + file.getName());
 			} else if (file.isDirectory()) {
 				listFiles(file.getAbsolutePath(), filesList);
 			}
-
-			// create an empty model
 		}
 	}
 
@@ -44,14 +39,18 @@ public class ProjectApplication {
 		System.out.println("Current dir using System:" + currentDir);
 
 		List<File> filesList = new ArrayList<>();
-
+		Meteo meteo = new Meteo();
+		System.err.println("Date Meteo Saint Etienne");
+		System.err.println("day = " + meteo.jour + "/" + meteo.mois + "/" + meteo.annee + " : code " + meteo.code);
+		System.err.println(meteo.createQuery());
 		try {
 			listFiles("./Plateforme_Territoire/kg/", filesList);
 		} catch (InvocationTargetException e) {
-			e.printStackTrace();
+			// e.printStackTrace();
+			System.err.println("ERREUR IN LOADING PLATFORME TERRETOIRE Folder(s)");
 		}
-		System.out.println("files List size = " + filesList.size());
-		System.out.println("\n" + filesList.get(0).getAbsolutePath() + "\n");
+		System.err.println("Loading " + filesList.size() + "files to List is Successed !!");
+		// System.out.println("\n" + filesList.get(0).getAbsolutePath() + "\n");
 		Model model = ModelFactory.createDefaultModel();
 		// model.read(filesList.get(0).getAbsolutePath());
 
@@ -59,6 +58,11 @@ public class ProjectApplication {
 			// System.out.println("file " + file);
 			model.read(file.getAbsolutePath());
 		}
+		System.err.println("Model TriplStore also loaded Successfully !!");
+		model.setNsPrefix("xsd", "http://www.w3.org/2001/XMLSchema#");
+		model.setNsPrefix("meteo", "http://example.com/Meteo#");
+		System.err.println("To See Results, please Open your Navigatore and type:\n\tlocalhost:3030/");
+		// Avant Lancer l'application Spring soit sur que vous lancer le serveur
 		String datasetURL = "http://localhost:3030/ProjetDataSet";
 		String sparqlEndpoint = datasetURL + "/sparql";
 		String sparqlUpdate = datasetURL + "/update";
