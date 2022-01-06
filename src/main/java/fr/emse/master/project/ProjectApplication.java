@@ -99,7 +99,7 @@ public class ProjectApplication {
 		 * __________________________________________________________________________________________
 		 */
 		try {
-			OutputStream out = new FileOutputStream("myOutPut.ttl");
+			OutputStream out = new FileOutputStream("allPlateformeTerritoire.ttl");
 
 			// Converts the string into bytes
 
@@ -108,9 +108,7 @@ public class ProjectApplication {
 			model.write(out, "TTL");
 			// Closes the output stream
 			out.close();
-		}
-
-		catch (Exception e) {
+		} catch (Exception e) {
 			e.getStackTrace();
 		}
 		System.err.println("To See Results, please Open your Navigatore and type:\n\tlocalhost:3030/");

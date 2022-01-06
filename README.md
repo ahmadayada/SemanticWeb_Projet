@@ -20,6 +20,9 @@ The Semantic Web project is a large and long practical exercise that consists in
         - [Download Apache Jena frameWork](https://dlcdn.apache.org/jena/binaries/apache-jena-fuseki-4.3.2.zip).
         - Unzip the *apache-jena-fuseki[].zip* __beside__ the semantic Web project folder
     * Download from the internet "Terretoire resources" file and copy it to project root folder.
+    * Download Project Docs Sensor Zip and unzipped the projet
+        [download links](https://seafile.emse.fr/d/710ced68c2894189a6f4/)
+        example: $SemanticWeb/project>cd project-docs
     * install maven (Apache-Maven-3.8.3) to your computer machine and Java version: 11.0.13 (jdk-11.0.13).
 ```
 
