@@ -1,4 +1,4 @@
-package fr.emse.master.project.Controller;
+package fr.emse.master.project.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
