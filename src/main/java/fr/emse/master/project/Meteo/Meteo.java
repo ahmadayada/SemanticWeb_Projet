@@ -64,6 +64,7 @@ public class Meteo {
     public String createQuery() {
         String query = "?code2=" + code + "&jour2=" + jour + "&mois2=" + (mois - 1) + "&annee2=" + annee;
         return query;
+
     }
 
 }

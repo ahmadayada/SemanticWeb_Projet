@@ -46,4 +46,4 @@ The Semantic Web project is a large and long practical exercise that consists in
         $> java -jar target/project-0.0.1-SNAPSHOT.jar
     ```
 
-<br /><hr>
+---

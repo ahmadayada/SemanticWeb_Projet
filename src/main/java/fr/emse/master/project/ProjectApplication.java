@@ -8,6 +8,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.jena.base.Sys;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.rdf.model.Property;
@@ -117,10 +118,16 @@ public class ProjectApplication {
 		String sparqlEndpoint = datasetURL + "/sparql";
 		String sparqlUpdate = datasetURL + "/update";
 		String graphStore = datasetURL + "/data";
-		RDFConnection conneg = RDFConnectionFactory.connect(sparqlEndpoint, sparqlUpdate, graphStore);
-		conneg.load(model); // add the content of model to the triplestore
-		conneg.update("INSERT DATA { <test> a <TestClass> }"); // add the triple to the triplestore
-
+		try {
+			RDFConnection conneg = RDFConnectionFactory.connect(sparqlEndpoint, sparqlUpdate, graphStore);
+			conneg.load(model); // add the content of model to the triplestore
+			conneg.update("INSERT DATA { <test> a <TestClass> }"); // add the triple to the triplestore
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.err.println("cannot connect to " + datasetURL);
+			System.err.println("please verify your Apache Jena Fuskie Server is Started");
+			System.err.println();
+		}
 	}
 
 }
