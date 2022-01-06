@@ -1,0 +1,75 @@
+@prefix ns1: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://schema.org/Day_16-10-2021_0/> ns1:outsideTemp "6.9"^^xsd:float ;
+    ns1:time "0"^^xsd:dateTime .
+
+<http://schema.org/Day_16-10-2021_1/> ns1:outsideTemp "6.7"^^xsd:float ;
+    ns1:time "1"^^xsd:dateTime .
+
+<http://schema.org/Day_16-10-2021_10/> ns1:outsideTemp "6.4"^^xsd:float ;
+    ns1:time "10"^^xsd:dateTime .
+
+<http://schema.org/Day_16-10-2021_11/> ns1:outsideTemp "6.5"^^xsd:float ;
+    ns1:time "11"^^xsd:dateTime .
+
+<http://schema.org/Day_16-10-2021_12/> ns1:outsideTemp "6.7"^^xsd:float ;
+    ns1:time "12"^^xsd:dateTime .
+
+<http://schema.org/Day_16-10-2021_13/> ns1:outsideTemp "6.8"^^xsd:float ;
+    ns1:time "13"^^xsd:dateTime .
+
+<http://schema.org/Day_16-10-2021_14/> ns1:outsideTemp "6.7"^^xsd:float ;
+    ns1:time "14"^^xsd:dateTime .
+
+<http://schema.org/Day_16-10-2021_15/> ns1:outsideTemp "6.6"^^xsd:float ;
+    ns1:time "15"^^xsd:dateTime .
+
+<http://schema.org/Day_16-10-2021_16/> ns1:outsideTemp "6.4"^^xsd:float ;
+    ns1:time "16"^^xsd:dateTime .
+
+<http://schema.org/Day_16-10-2021_17/> ns1:outsideTemp "5.8"^^xsd:float ;
+    ns1:time "17"^^xsd:dateTime .
+
+<http://schema.org/Day_16-10-2021_18/> ns1:outsideTemp "5.4"^^xsd:float ;
+    ns1:time "18"^^xsd:dateTime .
+
+<http://schema.org/Day_16-10-2021_19/> ns1:outsideTemp "5.4"^^xsd:float ;
+    ns1:time "19"^^xsd:dateTime .
+
+<http://schema.org/Day_16-10-2021_2/> ns1:outsideTemp "6.6"^^xsd:float ;
+    ns1:time "2"^^xsd:dateTime .
+
+<http://schema.org/Day_16-10-2021_20/> ns1:outsideTemp "5.3"^^xsd:float ;
+    ns1:time "20"^^xsd:dateTime .
+
+<http://schema.org/Day_16-10-2021_21/> ns1:outsideTemp "5.2"^^xsd:float ;
+    ns1:time "21"^^xsd:dateTime .
+
+<http://schema.org/Day_16-10-2021_22/> ns1:outsideTemp "5.2"^^xsd:float ;
+    ns1:time "22"^^xsd:dateTime .
+
+<http://schema.org/Day_16-10-2021_23/> ns1:outsideTemp "4.7"^^xsd:float ;
+    ns1:time "23"^^xsd:dateTime .
+
+<http://schema.org/Day_16-10-2021_3/> ns1:outsideTemp "6.5"^^xsd:float ;
+    ns1:time "3"^^xsd:dateTime .
+
+<http://schema.org/Day_16-10-2021_4/> ns1:outsideTemp "6.4"^^xsd:float ;
+    ns1:time "4"^^xsd:dateTime .
+
+<http://schema.org/Day_16-10-2021_5/> ns1:outsideTemp "6.3"^^xsd:float ;
+    ns1:time "5"^^xsd:dateTime .
+
+<http://schema.org/Day_16-10-2021_6/> ns1:outsideTemp "6.2"^^xsd:float ;
+    ns1:time "6"^^xsd:dateTime .
+
+<http://schema.org/Day_16-10-2021_7/> ns1:outsideTemp "6.2"^^xsd:float ;
+    ns1:time "7"^^xsd:dateTime .
+
+<http://schema.org/Day_16-10-2021_8/> ns1:outsideTemp "6.2"^^xsd:float ;
+    ns1:time "8"^^xsd:dateTime .
+
+<http://schema.org/Day_16-10-2021_9/> ns1:outsideTemp "6.3"^^xsd:float ;
+    ns1:time "9"^^xsd:dateTime .
+

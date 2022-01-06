@@ -1,0 +1,35 @@
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<03f5ca58-aa70-47b3-980c-c8f486cac9ee> a sosa:TempSensor ;
+    sosa:hasTempResult "19.9"^^xsd:float ;
+    sosa:isHostedBy <emse/fayol/e4/S431H> ;
+    sosa:resultTime "15-11-2021, 06:31:28"^^xsd:dateTime .
+
+<24a89ddc-23c8-4d9f-9f5e-cff4eba32fb5> a sosa:HmdtSensor,
+        sosa:LumiSensor,
+        sosa:TempSensor ;
+    sosa:hasHumidityResult "33.7"^^xsd:float ;
+    sosa:hasLumiResult "13.0"^^xsd:float ;
+    sosa:hasTempResult "23.9"^^xsd:float ;
+    sosa:isHostedBy <emse/fayol/e4/S424> ;
+    sosa:resultTime "16-11-2021, 06:31:28"^^xsd:dateTime .
+
+<757e0b46-0efe-4f36-bf2c-e8008e49d950> a sosa:HmdtSensor,
+        sosa:LumiSensor,
+        sosa:TempSensor ;
+    sosa:hasHumidityResult "39.5"^^xsd:float ;
+    sosa:hasLumiResult "3.0"^^xsd:float ;
+    sosa:hasTempResult "22.3"^^xsd:float ;
+    sosa:isHostedBy <emse/fayol/e4/Hall4Nord> ;
+    sosa:resultTime "16-11-2021, 06:31:27"^^xsd:dateTime .
+
+sosa:HmdtSensor a sosa:Sensor ;
+    sosa:observes <https://w3id.org/seas/humidity> .
+
+sosa:LumiSensor a sosa:Sensor ;
+    sosa:observes <https://w3id.org/seas/luminosity> .
+
+sosa:TempSensor a sosa:Sensor ;
+    sosa:observes <https://w3id.org/seas/temperature> .
+
