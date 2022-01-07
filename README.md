@@ -8,10 +8,10 @@ The Semantic Web project is a large and long practical exercise that consists in
 
 [Go The Project WebSite](https://www.emse.fr/~zimmermann/Teaching/SemWeb/Project/).
 
-### Team Group
+### Team Group M2-DSC
 
     Ibtissam
-    Ahmad
+    Ahmad AYADA
 
 ## pre-install
 
@@ -25,11 +25,12 @@ The Semantic Web project is a large and long practical exercise that consists in
    * install maven (Apache-Maven-3.8.3) to your computer machine and Java version: 11.0.13 (jdk-11.0.13).
 ## Run Project Using the Maven plugin
 
-    In Jana jena-fuseki Folder
+In Jana jena-fuseki Folder
+
         $>cd ~/SemanticWeb/apache-jena-fuseki-4.3.2
         $~/SemanticWeb/apache-jena-fuseki-4.3.2> ./fuseki-server
 
-    In root folder of project example : cd ~[path_to]/SemanticWeb/project/
+ In root folder of project example : cd ~[path_to]/SemanticWeb/project/
    
         $>cd ~/SemanticWeb/project/
         $cd ~/SemanticWeb/project>mvn spring-boot:run
@@ -44,7 +45,8 @@ The Semantic Web project is a large and long practical exercise that consists in
 
 ## AFTER Run Project (if every things going good);
 
-    Insde of Root Project Dicretory you find .ttl file created during execution
+Insde of Root Project Dicretory you find .ttl file created during execution
+
         $~/SemanticWeb/project/>cd outPutTTL
         $~/SemanticWeb/project/outPutTTL/>ls -al # Listing all files in current Folder
 
