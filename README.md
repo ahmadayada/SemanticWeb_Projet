@@ -46,7 +46,7 @@ The Semantic Web project is a large and long practical exercise that consists in
         $> java -jar target/project-0.0.1-SNAPSHOT.jar
     ```
 
-## AFTER Run Project (if every things going godd);
+## AFTER Run Project (if every things going good);
 
     Insde of Root Project Dicretory you find .ttl file created during execution
         $~/SemanticWeb/project/>cd outPutTTL
