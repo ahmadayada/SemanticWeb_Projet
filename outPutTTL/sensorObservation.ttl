@@ -1,0 +1,55 @@
+@prefix dul:    <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
+@prefix obs:    <https://territoire.emse.fr/kg/emse/fayol/observation/> .
+@prefix salle:  <https://territoire.emse.fr/kg/emse/fayol/> .
+@prefix schema: <http://schema.org/> .
+@prefix sosa:   <http://www.w3.org/ns/sosa/> .
+
+salle:sensor-88cb0522-478a-456c-b63b-9c402b5e03b2
+        a                sosa:Sensor ;
+        dul:hasLocation  <https://territoire.emse.fr/kg/emse/fayol/e4/S422> .
+
+salle:sensor-140ade6c-4418-4d86-a14e-25b7db5ae83b
+        a                sosa:Sensor ;
+        dul:hasLocation  <https://territoire.emse.fr/kg/emse/fayol/e4/S432> .
+
+salle:sensor-28bb16da-5d54-4882-9c2b-70c746586185
+        a                sosa:Sensor ;
+        dul:hasLocation  <https://territoire.emse.fr/kg/emse/fayol/e4/S416> .
+
+salle:sensor-7b051d3a-8547-463d-9d28-a2d50c5098b4
+        a                sosa:Sensor ;
+        dul:hasLocation  <https://territoire.emse.fr/kg/emse/fayol/e4/S421> .
+
+salle:sensor-24a89ddc-23c8-4d9f-9f5e-cff4eba32fb5
+        a                sosa:Sensor ;
+        dul:hasLocation  <https://territoire.emse.fr/kg/emse/fayol/e4/S424> .
+
+obs:observation-0  a           sosa:Observation ;
+        schema:value           "19.56"^^<http://www.w3.org/2001/XMLSchema#float> , "26.2"^^<http://www.w3.org/2001/XMLSchema#float> , "19.9"^^<http://www.w3.org/2001/XMLSchema#float> , "23.8"^^<http://www.w3.org/2001/XMLSchema#float> , "19.06"^^<http://www.w3.org/2001/XMLSchema#float> , "19.4"^^<http://www.w3.org/2001/XMLSchema#float> , "21.4"^^<http://www.w3.org/2001/XMLSchema#float> , "20"^^<http://www.w3.org/2001/XMLSchema#float> , "18.9"^^<http://www.w3.org/2001/XMLSchema#float> , "20.9"^^<http://www.w3.org/2001/XMLSchema#float> , "21.6"^^<http://www.w3.org/2001/XMLSchema#float> , "26.3"^^<http://www.w3.org/2001/XMLSchema#float> , "22.3"^^<http://www.w3.org/2001/XMLSchema#float> , "21.1"^^<http://www.w3.org/2001/XMLSchema#float> , "19.12"^^<http://www.w3.org/2001/XMLSchema#float> , "21.8"^^<http://www.w3.org/2001/XMLSchema#float> , "20.6"^^<http://www.w3.org/2001/XMLSchema#float> , "23"^^<http://www.w3.org/2001/XMLSchema#float> , "21.2"^^<http://www.w3.org/2001/XMLSchema#float> , "20.1"^^<http://www.w3.org/2001/XMLSchema#float> , "20.7"^^<http://www.w3.org/2001/XMLSchema#float> , "19.6"^^<http://www.w3.org/2001/XMLSchema#float> , "22"^^<http://www.w3.org/2001/XMLSchema#float> , "20.2"^^<http://www.w3.org/2001/XMLSchema#float> , "19.44"^^<http://www.w3.org/2001/XMLSchema#float> , "19.31"^^<http://www.w3.org/2001/XMLSchema#float> , "23.7"^^<http://www.w3.org/2001/XMLSchema#float> , "19.7"^^<http://www.w3.org/2001/XMLSchema#float> , "23.06"^^<http://www.w3.org/2001/XMLSchema#float> , "18.81"^^<http://www.w3.org/2001/XMLSchema#float> , "18.94"^^<http://www.w3.org/2001/XMLSchema#float> , "19.2"^^<http://www.w3.org/2001/XMLSchema#float> , "23.12"^^<http://www.w3.org/2001/XMLSchema#float> , "23.19"^^<http://www.w3.org/2001/XMLSchema#float> , "19.19"^^<http://www.w3.org/2001/XMLSchema#float> , "26.62"^^<http://www.w3.org/2001/XMLSchema#float> , "21.3"^^<http://www.w3.org/2001/XMLSchema#float> , "26.75"^^<http://www.w3.org/2001/XMLSchema#float> , "19.1"^^<http://www.w3.org/2001/XMLSchema#float> , "20.8"^^<http://www.w3.org/2001/XMLSchema#float> , "26.87"^^<http://www.w3.org/2001/XMLSchema#float> , "21.9"^^<http://www.w3.org/2001/XMLSchema#float> , "23.6"^^<http://www.w3.org/2001/XMLSchema#float> , "20.3"^^<http://www.w3.org/2001/XMLSchema#float> , "19.8"^^<http://www.w3.org/2001/XMLSchema#float> , "19.3"^^<http://www.w3.org/2001/XMLSchema#float> , "26.81"^^<http://www.w3.org/2001/XMLSchema#float> , "22.2"^^<http://www.w3.org/2001/XMLSchema#float> , "21.5"^^<http://www.w3.org/2001/XMLSchema#float> , "21.7"^^<http://www.w3.org/2001/XMLSchema#float> , "19.37"^^<http://www.w3.org/2001/XMLSchema#float> , "21"^^<http://www.w3.org/2001/XMLSchema#float> , "18.87"^^<http://www.w3.org/2001/XMLSchema#float> , "26.56"^^<http://www.w3.org/2001/XMLSchema#float> , "26.69"^^<http://www.w3.org/2001/XMLSchema#float> , "20.5"^^<http://www.w3.org/2001/XMLSchema#float> , "19.5"^^<http://www.w3.org/2001/XMLSchema#float> , "19"^^<http://www.w3.org/2001/XMLSchema#float> , "22.1"^^<http://www.w3.org/2001/XMLSchema#float> , "19.25"^^<http://www.w3.org/2001/XMLSchema#float> , "20.4"^^<http://www.w3.org/2001/XMLSchema#float> ;
+        sosa:madeBySensor      salle:sensor-24a89ddc-23c8-4d9f-9f5e-cff4eba32fb5 , salle:sensor-70345659-3f50-49af-98e7-bbc93961df92 , salle:sensor-28bb16da-5d54-4882-9c2b-70c746586185 , salle:sensor-8aa60f58-fc6f-49e2-a53a-f5cc96bb9021 , salle:sensor-140ade6c-4418-4d86-a14e-25b7db5ae83b , salle:sensor-7b051d3a-8547-463d-9d28-a2d50c5098b4 , salle:sensor-03f5ca58-aa70-47b3-980c-c8f486cac9ee , salle:sensor-88cb0522-478a-456c-b63b-9c402b5e03b2 , salle:sensor-f9538ac8-4fdb-4049-9ff6-ac4855e3bcc5 , salle:sensor-6bd134b6-339c-4168-9aeb-ae7d0f236851 , salle:sensor-757e0b46-0efe-4f36-bf2c-e8008e49d950 ;
+        sosa:observedProperty  <https://territoire.emse.fr/kg/emse/fayol/e4/S432#temperature> , <https://territoire.emse.fr/kg/emse/fayol/e4/S423#temperature> , <https://territoire.emse.fr/kg/emse/fayol/e4/S425#temperature> , <https://territoire.emse.fr/kg/emse/fayol/e4/S431H#temperature> , <https://territoire.emse.fr/kg/emse/fayol/e4/Hall4Nord#temperature> , <https://territoire.emse.fr/kg/emse/fayol/e4/S421#temperature> , <https://territoire.emse.fr/kg/emse/fayol/e4/S416#temperature> , <https://territoire.emse.fr/kg/emse/fayol/e4/S424#temperature> , <https://territoire.emse.fr/kg/emse/fayol/e4/S431F#temperature> , <https://territoire.emse.fr/kg/emse/fayol/e4/S422#temperature> , <https://territoire.emse.fr/kg/emse/fayol/e4/S405#temperature> ;
+        sosa:resultTime        "2021-11-15-07"^^<http://www.w3.org/2001/XMLSchema#dateTime> , "2021-11-15-06"^^<http://www.w3.org/2001/XMLSchema#dateTime> , "2021-11-15-05"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+
+salle:sensor-70345659-3f50-49af-98e7-bbc93961df92
+        a                sosa:Sensor ;
+        dul:hasLocation  <https://territoire.emse.fr/kg/emse/fayol/e4/S425> .
+
+salle:sensor-757e0b46-0efe-4f36-bf2c-e8008e49d950
+        a                sosa:Sensor ;
+        dul:hasLocation  <https://territoire.emse.fr/kg/emse/fayol/e4/Hall4Nord> .
+
+salle:sensor-03f5ca58-aa70-47b3-980c-c8f486cac9ee
+        a                sosa:Sensor ;
+        dul:hasLocation  <https://territoire.emse.fr/kg/emse/fayol/e4/S431H> .
+
+salle:sensor-6bd134b6-339c-4168-9aeb-ae7d0f236851
+        a                sosa:Sensor ;
+        dul:hasLocation  <https://territoire.emse.fr/kg/emse/fayol/e4/S405> .
+
+salle:sensor-8aa60f58-fc6f-49e2-a53a-f5cc96bb9021
+        a                sosa:Sensor ;
+        dul:hasLocation  <https://territoire.emse.fr/kg/emse/fayol/e4/S423> .
+
+salle:sensor-f9538ac8-4fdb-4049-9ff6-ac4855e3bcc5
+        a                sosa:Sensor ;
+        dul:hasLocation  <https://territoire.emse.fr/kg/emse/fayol/e4/S431F> .
