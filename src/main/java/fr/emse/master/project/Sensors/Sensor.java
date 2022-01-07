@@ -111,6 +111,7 @@ public class Sensor {
                 RDFConnection conneg = RDFConnectionFactory.connect(sparqlEndpoint, sparqlUpdate, graphStore);
                 conneg.load(model); // add the content of model to the triplestore
                 conneg.update("INSERT DATA { <test> a <TestClass> }"); // add the triple to the triplestore
+                conneg.close();
             } catch (Exception e) {
                 System.err.println("cannot connect to " + datasetURL);
                 System.err.println("please verify your Apache Jena Fuskie Server is Started");

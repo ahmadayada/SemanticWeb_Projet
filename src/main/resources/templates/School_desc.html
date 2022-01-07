@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[[ ${pageName}]] | Semantic Web</title>
+    <style>
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 450px;
+            height: 350px;
+        }
+    </style>
+</head>
+
+<body>
+    <H1>All Description -Page</H1>
+
+    <h3>hello again</h1>
+        <div>
+            <img class="center" src="Images/fauriel.png" alt="Site Image">
+        </div>
+        <div>
+            <p></p>
+            <p>please GoTO <a href="home">Home</a></p>
+        </div>
+        <div>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">PLQCE</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Type</th>
+        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-th-each="result : ${ResultSet}">
+                        <td>[[ ${result.Key}]] </td>
+                        <td>[[ ${result.Value}]]</td>
+                        <td> 3</td>
+                    </tr>
+        </div>
+</body>
+
+</html>

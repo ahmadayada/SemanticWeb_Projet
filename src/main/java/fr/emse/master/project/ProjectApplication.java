@@ -10,11 +10,6 @@ import java.util.List;
 
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
-import org.apache.jena.rdf.model.Property;
-import org.apache.jena.rdf.model.RDFNode;
-import org.apache.jena.rdf.model.Resource;
-import org.apache.jena.rdf.model.Statement;
-import org.apache.jena.rdf.model.StmtIterator;
 import org.apache.jena.rdfconnection.RDFConnection;
 import org.apache.jena.rdfconnection.RDFConnectionFactory;
 import org.springframework.boot.SpringApplication;
@@ -74,27 +69,6 @@ public class ProjectApplication {
 		/*
 		 * __________________________________________________________________________________________
 		 */
-		// list the statements in the Model
-		StmtIterator iter = model.listStatements();
-
-		// print out the predicate, subject and object of each statement
-		while (iter.hasNext()) {
-			Statement stmt = iter.nextStatement(); // get next statement
-			Resource subject = stmt.getSubject(); // get the subject
-			Property predicate = stmt.getPredicate(); // get the predicate
-			RDFNode object = stmt.getObject(); // get the object
-
-			// System.out.print(subject.toString());
-			// System.out.print(" " + predicate.toString() + " ");
-			if (object instanceof Resource) {
-				// System.out.print(object.toString());
-			} else {
-				// object is a literal
-				// System.out.print(" \"" + object.toString() + "\"");
-			}
-
-			// System.out.println(" .");
-		}
 
 		/*
 		 * __________________________________________________________________________________________
@@ -122,6 +96,7 @@ public class ProjectApplication {
 			RDFConnection conneg = RDFConnectionFactory.connect(sparqlEndpoint, sparqlUpdate, graphStore);
 			conneg.load(model); // add the content of model to the triplestore
 			conneg.update("INSERT DATA { <test> a <TestClass> }"); // add the triple to the triplestore
+			conneg.close();
 		} catch (Exception e) {
 			System.err.println("cannot connect to " + datasetURL);
 			System.err.println("please verify your Apache Jena Fuskie Server is Started");
