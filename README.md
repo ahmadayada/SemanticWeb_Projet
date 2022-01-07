@@ -6,7 +6,7 @@ The Semantic Web project is a large and long practical exercise that consists in
 
 ### Projet Info
 
-    [Go The Project WebSite](https://www.emse.fr/~zimmermann/Teaching/SemWeb/Project/).
+[Go The Project WebSite](https://www.emse.fr/~zimmermann/Teaching/SemWeb/Project/).
 
 ### Team Group
 
@@ -15,17 +15,14 @@ The Semantic Web project is a large and long practical exercise that consists in
 
 ## pre-install
 
-```
-    * Download Apache Jena frameWork from the the link:
+   * Download Apache Jena frameWork from the the link:
         - [Download Apache Jena frameWork](https://dlcdn.apache.org/jena/binaries/apache-jena-fuseki-4.3.2.zip).
         - Unzip the *apache-jena-fuseki[].zip* __beside__ the semantic Web project folder
-    * Download from the internet "Terretoire resources" file and copy it to project root folder.
-    * Download Project Docs Sensor Zip and unzipped the projet
+   * Download from the internet "Terretoire resources" file and copy it to project root folder.
+   * Download Project Docs Sensor Zip and unzipped the projet
         [download links](https://seafile.emse.fr/d/710ced68c2894189a6f4/)
         example: $SemanticWeb/project>cd project-docs
-    * install maven (Apache-Maven-3.8.3) to your computer machine and Java version: 11.0.13 (jdk-11.0.13).
-```
-
+   * install maven (Apache-Maven-3.8.3) to your computer machine and Java version: 11.0.13 (jdk-11.0.13).
 ## Run Project Using the Maven plugin
 
     In Jana jena-fuseki Folder
@@ -33,18 +30,17 @@ The Semantic Web project is a large and long practical exercise that consists in
         $~/SemanticWeb/apache-jena-fuseki-4.3.2> ./fuseki-server
 
     In root folder of project example : cd ~[path_to]/SemanticWeb/project/
-    ```
+   
         $>cd ~/SemanticWeb/project/
         $cd ~/SemanticWeb/project>mvn spring-boot:run
-    ```
+    
 
 ## Run Project Using Java (if you have also mvn)
 
-    ```
+    
         $> cd ~[path_to]/SemanticWeb/project/
         $> mvn install
         $> java -jar target/project-0.0.1-SNAPSHOT.jar
-    ```
 
 ## AFTER Run Project (if every things going good);
 
@@ -52,4 +48,4 @@ The Semantic Web project is a large and long practical exercise that consists in
         $~/SemanticWeb/project/>cd outPutTTL
         $~/SemanticWeb/project/outPutTTL/>ls -al # Listing all files in current Folder
 
----
+________________________________________________________
