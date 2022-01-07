@@ -23,6 +23,7 @@ The Semantic Web project is a large and long practical exercise that consists in
         [download links](https://seafile.emse.fr/d/710ced68c2894189a6f4/)
         example: $SemanticWeb/project>cd project-docs
    * install maven (Apache-Maven-3.8.3) to your computer machine and Java version: 11.0.13 (jdk-11.0.13).
+   ** More Help [Go to](https://github.com/ahmadayada/SemanticWeb_Projet/blob/main/HELP.md)
 ## Run Project Using the Maven plugin
 
 In Jana jena-fuseki Folder
