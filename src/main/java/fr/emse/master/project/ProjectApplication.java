@@ -84,16 +84,16 @@ public class ProjectApplication {
 			Property predicate = stmt.getPredicate(); // get the predicate
 			RDFNode object = stmt.getObject(); // get the object
 
-			System.out.print(subject.toString());
-			System.out.print(" " + predicate.toString() + " ");
+			// System.out.print(subject.toString());
+			// System.out.print(" " + predicate.toString() + " ");
 			if (object instanceof Resource) {
-				System.out.print(object.toString());
+				// System.out.print(object.toString());
 			} else {
 				// object is a literal
-				System.out.print(" \"" + object.toString() + "\"");
+				// System.out.print(" \"" + object.toString() + "\"");
 			}
 
-			System.out.println(" .");
+			// System.out.println(" .");
 		}
 
 		/*

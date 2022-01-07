@@ -148,8 +148,6 @@
 <https://territoire.emse.fr/kg/emse/fayol/4ET/425#atmosphericPressure>
         rdf:type  seas:AtmosphericPressureProperty .
 
-[ ex:sg   "<https://ci.mines-stetienne.fr/kg/emse/fayol/CRS> Point(0 0)"^^geo:wktLiteral ] .
-
 <https://territoire.emse.fr/kg/emse/fayol/6ET/south-bathroom-men#atmosphericPressure>
         rdf:type  seas:AtmosphericPressureProperty .
 
@@ -810,6 +808,13 @@ territoire:ClassRoom  rdf:type  owl:Class ;
         seas:luminosity           <https://territoire.emse.fr/kg/emse/fayol/4ET/426#luminosity> ;
         seas:temperature          <https://territoire.emse.fr/kg/emse/fayol/4ET/426#temperature> .
 
+[ rdf:type                   seas:Evaluation , seas:InstantaneousEvaluation ;
+  seas:evaluatedSimpleValue  "50 kWh"^^cdt:ucum ;
+  seas:evaluatedValue        <https://territoire.emse.fr/kg/emse/fayol/#consumedEnergyPT10M> ;
+  seas:hasTemporalContext    [ time:inXSDDateTime
+                    "2020-01-02T00:00:00+01:00"^^xsd:dateTime ]
+] .
+
 <https://territoire.emse.fr/kg/emse/fayol/3ET/328#temperature>
         rdf:type  seas:TemperatureProperty .
 
@@ -834,7 +839,7 @@ territoire:ClassRoom  rdf:type  owl:Class ;
         territoire:numberOfComputers  14 ;
         territoire:roomCapacity       28 ;
         bot:adjacentZone              <https://territoire.emse.fr/kg/emse/fayol/1ET/north-corridor> ;
-        bot:hasElement                <https://territoire.emse.fr/kg/emse/fayol/1ET/111#computer3> , <https://territoire.emse.fr/kg/emse/fayol/1ET/111#computer14> , <https://territoire.emse.fr/kg/emse/fayol/1ET/111#computer9> , <https://territoire.emse.fr/kg/emse/fayol/1ET/111#computer6> , <https://territoire.emse.fr/kg/emse/fayol/1ET/111#computer12> , <https://territoire.emse.fr/kg/emse/fayol/1ET/111#computer1> , <https://territoire.emse.fr/kg/emse/fayol/1ET/111#projector> , <https://territoire.emse.fr/kg/emse/fayol/1ET/111#computer10> , <https://territoire.emse.fr/kg/emse/fayol/1ET/111#computer4> , <https://territoire.emse.fr/kg/emse/fayol/1ET/111#computer7> , <https://territoire.emse.fr/kg/emse/fayol/1ET/111#computer13> , <https://territoire.emse.fr/kg/emse/fayol/1ET/111#computer2> , <https://territoire.emse.fr/kg/emse/fayol/1ET/111#computer5> , <https://territoire.emse.fr/kg/emse/fayol/1ET/111#computer8> , <https://territoire.emse.fr/kg/emse/fayol/1ET/111#computer11> ;
+        bot:hasElement                <https://territoire.emse.fr/kg/emse/fayol/1ET/111#computer3> , <https://territoire.emse.fr/kg/emse/fayol/1ET/111#computer14> , <https://territoire.emse.fr/kg/emse/fayol/1ET/111#computer1> , <https://territoire.emse.fr/kg/emse/fayol/1ET/111#computer9> , <https://territoire.emse.fr/kg/emse/fayol/1ET/111#computer6> , <https://territoire.emse.fr/kg/emse/fayol/1ET/111#computer12> , <https://territoire.emse.fr/kg/emse/fayol/1ET/111#projector> , <https://territoire.emse.fr/kg/emse/fayol/1ET/111#computer10> , <https://territoire.emse.fr/kg/emse/fayol/1ET/111#computer4> , <https://territoire.emse.fr/kg/emse/fayol/1ET/111#computer7> , <https://territoire.emse.fr/kg/emse/fayol/1ET/111#computer13> , <https://territoire.emse.fr/kg/emse/fayol/1ET/111#computer2> , <https://territoire.emse.fr/kg/emse/fayol/1ET/111#computer5> , <https://territoire.emse.fr/kg/emse/fayol/1ET/111#computer8> , <https://territoire.emse.fr/kg/emse/fayol/1ET/111#computer11> ;
         seas:atmosphericPressure      <https://territoire.emse.fr/kg/emse/fayol/1ET/111#atmosphericPressure> ;
         seas:humidity                 <https://territoire.emse.fr/kg/emse/fayol/1ET/111#humidity> ;
         seas:luminosity               <https://territoire.emse.fr/kg/emse/fayol/1ET/111#luminosity> ;
@@ -887,12 +892,6 @@ territoire:ClassRoom  rdf:type  owl:Class ;
 
 <https://territoire.emse.fr/kg/emse/fayol/1ET/espace-eleves#atmosphericPressure>
         rdf:type  seas:AtmosphericPressureProperty .
-
-[ rdf:type             seas:FixedDurationSum ;
-  seas:sumDuration     "PT10M"^^xsd:duration ;
-  seas:sumProperty     <https://territoire.emse.fr/kg/emse/fayol/#consumedEnergyPT10M> ;
-  seas:summedProperty  <https://territoire.emse.fr/kg/emse/fayol/#consumedPower>
-] .
 
 <https://territoire.emse.fr/kg/emse/fayol/3ET/316#luminosity>
         rdf:type  seas:LuminosityProperty .
@@ -1659,6 +1658,12 @@ territoire:  rdf:type  owl:Ontology ;
         seas:luminosity           <https://territoire.emse.fr/kg/emse/fayol/6ET/kitchen-coffee-lunch-area#luminosity> ;
         seas:temperature          <https://territoire.emse.fr/kg/emse/fayol/6ET/kitchen-coffee-lunch-area#temperature> .
 
+[ rdf:type             seas:FixedDurationSum ;
+  seas:sumDuration     "PT10M"^^xsd:duration ;
+  seas:sumProperty     <https://territoire.emse.fr/kg/emse/fayol/#consumedEnergyPT10M> ;
+  seas:summedProperty  <https://territoire.emse.fr/kg/emse/fayol/#consumedPower>
+] .
+
 <https://territoire.emse.fr/kg/emse/fayol/4ET/428>
         rdf:type                  territoire:OfficeRoom , bot:Space ;
         rdfs:comment              "IoT lab room 428 at 4th floor of Espace Fauriel, Mines Saint-Étienne"@en ;
@@ -2218,6 +2223,8 @@ territoire:wheelAccessible
         seas:luminosity           <https://territoire.emse.fr/kg/emse/fayol/6ET/south-bathroom-men#luminosity> ;
         seas:temperature          <https://territoire.emse.fr/kg/emse/fayol/6ET/south-bathroom-men#temperature> .
 
+[ ex:sg   "<https://ci.mines-stetienne.fr/kg/emse/fayol/CRS> Point(0 0)"^^geo:wktLiteral ] .
+
 <https://territoire.emse.fr/kg/emse/fayol/2ET/211#temperature>
         rdf:type  seas:TemperatureProperty .
 
@@ -2394,13 +2401,6 @@ territoire:Bathroom  rdf:type  owl:Class ;
 
 <https://territoire.emse.fr/kg/emse/fayol/5ET/501F#temperature>
         rdf:type  seas:TemperatureProperty .
-
-[ rdf:type                   seas:Evaluation , seas:InstantaneousEvaluation ;
-  seas:evaluatedSimpleValue  "50 kWh"^^cdt:ucum ;
-  seas:evaluatedValue        <https://territoire.emse.fr/kg/emse/fayol/#consumedEnergyPT10M> ;
-  seas:hasTemporalContext    [ time:inXSDDateTime
-                    "2020-01-02T00:00:00+01:00"^^xsd:dateTime ]
-] .
 
 <https://territoire.emse.fr/kg/emse/fayol/2ET/211#atmosphericPressure>
         rdf:type  seas:AtmosphericPressureProperty .
@@ -3344,6 +3344,11 @@ territoire:ComputerClassRoom
         seas:luminosity           <https://territoire.emse.fr/kg/emse/fayol/RDC/020-bathroom#luminosity> ;
         seas:temperature          <https://territoire.emse.fr/kg/emse/fayol/RDC/020-bathroom#temperature> .
 
+[ rdf:type                   seas:Evaluation , seas:HeatedSurfaceEvaluation , seas:ApproximateEvaluation ;
+  seas:evaluatedProperty     <https://territoire.emse.fr/kg/emse/fayol/#surface> ;
+  seas:evaluatedSimpleValue  "6580 m2"^^cdt:ucum
+] .
+
 <https://territoire.emse.fr/kg/emse/fayol/RDC/>
         rdf:type                    bot:Storey ;
         rdfs:comment                "The ground floor of the building of Mines Saint-Étienne located at Espace Fauriel, 29 rue Pierre et Dominique Ponchardier."@en ;
@@ -3619,11 +3624,6 @@ territoire:ComputerClassRoom
 
 <https://territoire.emse.fr/kg/emse/fayol/4ET/418#atmosphericPressure>
         rdf:type  seas:AtmosphericPressureProperty .
-
-[ rdf:type                   seas:Evaluation , seas:HeatedSurfaceEvaluation , seas:ApproximateEvaluation ;
-  seas:evaluatedProperty     <https://territoire.emse.fr/kg/emse/fayol/#surface> ;
-  seas:evaluatedSimpleValue  "6580 m2"^^cdt:ucum
-] .
 
 <https://territoire.emse.fr/kg/emse/fayol/5ET/531F>
         rdf:type                  territoire:Bathroom , bot:Space ;
@@ -3947,6 +3947,13 @@ territoire:canWalkTo  rdf:type  rdf:Property ;
 <https://territoire.emse.fr/kg/emse/fayol/3ET/314#atmosphericPressure>
         rdf:type  seas:AtmosphericPressureProperty .
 
+[ rdf:type                   seas:Evaluation , seas:InstantaneousEvaluation ;
+  seas:evaluatedSimpleValue  "65 kWh"^^cdt:ucum ;
+  seas:evaluatedValue        <https://territoire.emse.fr/kg/emse/fayol/#consumedEnergyPT10M> ;
+  seas:hasTemporalContext    [ time:inXSDDateTime
+                    "2020-01-02T00:10:00+01:00"^^xsd:dateTime ]
+] .
+
 <https://territoire.emse.fr/kg/emse/fayol/1ET/south-corridor#atmosphericPressure>
         rdf:type  seas:AtmosphericPressureProperty .
 
@@ -3993,6 +4000,11 @@ territoire:canWalkTo  rdf:type  rdf:Property ;
 
 <https://territoire.emse.fr/kg/emse/fayol/2ET/204#atmosphericPressure>
         rdf:type  seas:AtmosphericPressureProperty .
+
+[ rdf:type                   seas:Evaluation , seas:TotalEvaluation , seas:ApproximateEvaluation ;
+  seas:evaluatedProperty     <https://territoire.emse.fr/kg/emse/fayol/#surface> ;
+  seas:evaluatedSimpleValue  "6720 m2"^^cdt:ucum
+] .
 
 <https://territoire.emse.fr/kg/emse/fayol/4ET/424#luminosity>
         rdf:type  seas:LuminosityProperty .
@@ -4241,11 +4253,6 @@ territoire:MeetingRoom
         seas:luminosity             <https://territoire.emse.fr/kg/emse/fayol/RDC/stairlanding-to-basement#luminosity> ;
         seas:temperature            <https://territoire.emse.fr/kg/emse/fayol/RDC/stairlanding-to-basement#temperature> .
 
-[ rdf:type                   seas:Evaluation , seas:TotalEvaluation , seas:ApproximateEvaluation ;
-  seas:evaluatedProperty     <https://territoire.emse.fr/kg/emse/fayol/#surface> ;
-  seas:evaluatedSimpleValue  "6720 m2"^^cdt:ucum
-] .
-
 <https://territoire.emse.fr/kg/emse/fayol/6ET/terrace#humidity>
         rdf:type  seas:HumidityProperty .
 
@@ -4346,13 +4353,6 @@ territoire:MeetingRoom
 
 <https://territoire.emse.fr/kg/emse/fayol/3ET/323#atmosphericPressure>
         rdf:type  seas:AtmosphericPressureProperty .
-
-[ rdf:type                   seas:Evaluation , seas:InstantaneousEvaluation ;
-  seas:evaluatedSimpleValue  "65 kWh"^^cdt:ucum ;
-  seas:evaluatedValue        <https://territoire.emse.fr/kg/emse/fayol/#consumedEnergyPT10M> ;
-  seas:hasTemporalContext    [ time:inXSDDateTime
-                    "2020-01-02T00:10:00+01:00"^^xsd:dateTime ]
-] .
 
 <https://territoire.emse.fr/kg/emse/fayol/2ET/south-corridor#humidity>
         rdf:type  seas:HumidityProperty .

@@ -92,33 +92,34 @@ public class Sensor {
                     SimpleDateFormat sfd = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.FRANCE);
                     sfd.setTimeZone(TimeZone.getTimeZone("UTC"));
                     String date = sfd.format(mydate);
-                    // String dateOftime = date.split("T")[0];
-                    // String hour = date.split("T")[1].split(":")[0];
+                    String dateOftime = date.split("T")[0];
+                    String hour = date.split("T")[1].split(":")[0];
                     observation.addProperty(model.createProperty(sosa + "resultTime"),
-                            date, XSDGenericType.XSDdateTime);
+                            dateOftime + "-" + hour, XSDGenericType.XSDdateTime);
                     observation.addProperty(model.createProperty("http://schema.org/" + "value"), TEMP,
                             XSDGenericType.XSDfloat);
 
                 }
 
             }
+            exportSensor(model);
+            String datasetURL = "http://localhost:3030/ProjetDataSet";
+            String sparqlEndpoint = datasetURL + "/sparql";
+            String sparqlUpdate = datasetURL + "/update";
+            String graphStore = datasetURL + "/data";
+            try {
+                RDFConnection conneg = RDFConnectionFactory.connect(sparqlEndpoint, sparqlUpdate, graphStore);
+                conneg.load(model); // add the content of model to the triplestore
+                conneg.update("INSERT DATA { <test> a <TestClass> }"); // add the triple to the triplestore
+            } catch (Exception e) {
+                System.err.println("cannot connect to " + datasetURL);
+                System.err.println("please verify your Apache Jena Fuskie Server is Started");
+                System.err.println();
+            }
+            System.out.println("\nFin creation Sensors Observation\n");
 
         } catch (Exception e) {
             System.err.println(" !! ERROR : flie Sensor.java " + e.toString());
-        }
-        exportSensor(model);
-        String datasetURL = "http://localhost:3030/ProjetDataSet";
-        String sparqlEndpoint = datasetURL + "/sparql";
-        String sparqlUpdate = datasetURL + "/update";
-        String graphStore = datasetURL + "/data";
-        try {
-            RDFConnection conneg = RDFConnectionFactory.connect(sparqlEndpoint, sparqlUpdate, graphStore);
-            conneg.load(model); // add the content of model to the triplestore
-            conneg.update("INSERT DATA { <test> a <TestClass> }"); // add the triple to the triplestore
-        } catch (Exception e) {
-            System.err.println("cannot connect to " + datasetURL);
-            System.err.println("please verify your Apache Jena Fuskie Server is Started");
-            System.err.println();
         }
 
     }
