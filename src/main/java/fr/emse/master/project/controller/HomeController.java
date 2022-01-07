@@ -42,7 +42,7 @@ public class HomeController {
                     "SELECT ?x ?comment ?type \n" +
                     "WHERE { \n" +
                     " ?x rdfs:comment ?comment . \n" +
-                    " ?x rdf:type ?type \n} ORDER BY ?x \n ";
+                    " ?x rdf:type ?type \n} ORDER BY ?x \n";
 
             Query q = QueryFactory.create(sparqlQu);
             QueryExecution qe = QueryExecutionFactory.sparqlService(datasetURL, q);

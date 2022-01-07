@@ -20,6 +20,10 @@
             width: 450px;
             height: 350px;
         }
+        textarea {
+  width: 500px;
+  height: 300px;
+}
     </style>
 </head>
 
@@ -33,7 +37,22 @@
 <div>
     <p>To Show All the Rooms and Territoiry of "École Nationale Supérieure des Mines de Saint-Étienne"
     </p>
-    <p>plaease <a href="show_desc">Click Here</a></p>
+    <p>plaease <a href="show_desc">Click Here</a> To show result of Query Below</p>
+    <p>
+      
+        <textarea>
+        prefix schema:    <http: //schema.org />
+        prefix rdfs: <http: //www.w3.org/2000/01/rdf-schema#>
+        prefix rdf: <http: //www.w3.org/1999/02/22-rdf-syntax-ns#>
+                
+        SELECT ?x ?comment ?type
+                WHERE {
+                ?x rdfs:comment ?comment .
+                ?x rdf:type ?type
+            } ORDER BY ?x
+
+        </textarea>
+    </p>
 </div>
 
 </html>
